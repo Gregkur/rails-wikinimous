@@ -1,0 +1,16 @@
+<div class= "navbar">
+  <div>
+    <div>
+      <%= link_to 'Random Shit Collection', '/articles'%>
+    </div>  
+    <div>
+      <%=  link_to 'New Shit Article', 'articles/new' %>
+    </div>
+  </div>
+</div>
+<div class="container">
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %> <%= h truncate(article.content, :length => 40)%> </li>
+  <% end %>
+</ul>
